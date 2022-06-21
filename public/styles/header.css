@@ -1,0 +1,29 @@
+header {
+  height: 400px;
+  width: 100%;
+
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: orange;
+  color: white;
+}
+
+header img {
+  position: relative;
+  top: 120px;
+
+  height: 80%;
+  width: auto;
+}
+
+header h2 {
+  position: relative;
+  top: 20%;
+}
+
+header span {
+  font-weight: normal;
+}
