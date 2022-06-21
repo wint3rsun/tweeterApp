@@ -10,6 +10,8 @@ nav {
 
   display: flex;
   justify-content: space-between;
+
+  position: absolute;
 }
 
 nav span {
