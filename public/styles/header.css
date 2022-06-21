@@ -7,10 +7,10 @@ header {
   justify-content: center;
   align-items: center;
   
-  background-color: #ff9900;
+  background-color: #FFC063;
   background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
 
-  color: white;
+  color: #FFFFFF;
 }
 
 header img {
