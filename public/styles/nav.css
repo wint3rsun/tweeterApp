@@ -3,12 +3,32 @@ nav {
   
   height: 120px;
   width: 100vw;
-  
   padding-left: 1.5em;
   padding-right: 1.5em;
+
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 nav span {
   font-family: 'Bungee', cursive;
-  color: white;
+  
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+nav p {
+  margin: 0;
+}
+
+nav i {
+  text-align: center;
+}
+
+nav .right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
