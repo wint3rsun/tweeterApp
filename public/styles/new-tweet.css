@@ -2,6 +2,11 @@ section.new-tweet {
   font-weight: 600;
 }
 
+.new-tweet form {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 .new-tweet form textarea {
   background-color: #f4f1ec;
   
@@ -10,7 +15,7 @@ section.new-tweet {
   border-right-style: hidden;
   border-bottom-width: 5px;
   border-color: #545149;
-  
+
   width: 100%;
 }
 
