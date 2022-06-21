@@ -1,0 +1,32 @@
+section.new-tweet {
+  font-weight: 600;
+}
+
+.new-tweet form textarea {
+  background-color: #f4f1ec;
+  
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-bottom-width: 5px;
+  border-color: #545149;
+  
+  width: 100%;
+}
+
+.new-tweet form div {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 10px;
+}
+
+.new-tweet form div button {
+  border: none;
+  
+  background-color: #4056A1;
+
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #FFFFFF;
+}
