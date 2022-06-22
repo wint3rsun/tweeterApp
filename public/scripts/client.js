@@ -4,8 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const CHAR_LIMIT = 140;
+
 $(document).ready(function() {
-  
   // Function Definitions
   const createTweetElement = function(data) {
     const {user, content, created_at} = data;
@@ -70,14 +71,15 @@ $(document).ready(function() {
     const formData = $(this).find("#tweet-text");
     //console.log(formData.val())
     
-    if (!formData.val()) {
-      alert("Cannot send empty tweet");
+    if (!formData.val() || formData.val().length > CHAR_LIMIT || formData.val() === null) {
+      alert("Invalid Tweet! 🥺");
     } else {
       $.ajax({
         url: '/tweets/',
         data: formData.serialize(),
         method: "POST",
         success: (response) => {
+          formData.val('');
           console.log("AJAX is successfull girl :D");
           console.log(response);
           loadTweets();
