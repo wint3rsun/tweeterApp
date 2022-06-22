@@ -9,6 +9,9 @@ $(document).ready(function() {
   // Function Definitions
   const createTweetElement = function(data) {
     const {user, content, created_at} = data;
+
+    // format time as x time ago using timeago library
+    const formatedTime = timeago.format(created_at);
   
     let tweetTemplateMarkup = `
       <article class="tweet">
@@ -21,7 +24,7 @@ $(document).ready(function() {
         </header>
         <p>${content.text}</p>
         <footer>
-          <p>${created_at}</p>
+          <p>${formatedTime}</p>
           <div>
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
@@ -55,6 +58,8 @@ $(document).ready(function() {
       }
     });
   };
+
+  loadTweets();
 
   // Tweet form submission logic
   const $form = $('#jquery-ajax-form-submit');
