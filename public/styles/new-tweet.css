@@ -35,3 +35,7 @@ section.new-tweet {
   font-weight: 600;
   color: #FFFFFF;
 }
+
+.new-tweet form div output.invalid {
+  color: red;
+}
