@@ -50,8 +50,6 @@ $(document).ready(function() {
       url: '/tweets/',
       method: "Get",
       success: (response) => {
-        console.log("AJAX GET is successfull girl :D");
-        console.log(response);
         renderTweets(response);
       },
       error: (error) => {
@@ -69,23 +67,22 @@ $(document).ready(function() {
     event.preventDefault();
 
     const formData = $(this).find("#tweet-text");
-    //console.log(formData.val())
     
-    if (!formData.val() || formData.val().length > CHAR_LIMIT || formData.val() === null) {
-      alert("Invalid Tweet! 🥺");
+    if (!formData.val() || formData.val() === null) {
+      alert("Invalid Tweet! Can't submit nothing~ 😩");
+    } else if(formData.val().length > CHAR_LIMIT) {
+      alert("Invalid Tweet! Remove some char's plz 🥺");
     } else {
       $.ajax({
         url: '/tweets/',
         data: formData.serialize(),
         method: "POST",
         success: (response) => {
-          formData.val('');
-          console.log("AJAX is successfull girl :D");
-          console.log(response);
+          formData.val(''); //
           loadTweets();
         },
         error: (error) => {
-          console.log('Tweeter isn\'t working right now');
+          alert('Tweeter isn\'t working right now');
           console.log(error);
         }
       });
