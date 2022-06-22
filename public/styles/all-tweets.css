@@ -27,9 +27,13 @@ article.tweet header {
 }
 
 article.tweet header div {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+
+article.tweet header div img {
+  position: inherit;
 }
 
 article.tweet header p.tweet-username {
