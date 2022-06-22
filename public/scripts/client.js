@@ -99,5 +99,15 @@ $(document).ready(function () {
   //$('.all-tweets').append($tweet);
   renderTweets(tweetDataArr);
 
+  const $form = $('#jquery-ajax-form-submit');
+  
+  $form.on('submit', (event)=> {
+    event.preventDefault();
+    console.log(`SUCCESS :D FORM SUBMITED!`)
+    
+  });
+
+
+
 });
 
