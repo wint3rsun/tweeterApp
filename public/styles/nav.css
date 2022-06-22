@@ -10,7 +10,8 @@ nav {
   display: flex;
   justify-content: space-between;
 
-  position: absolute;
+  position: fixed;
+  top: 0;
 }
 
 nav span {
