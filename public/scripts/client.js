@@ -8,6 +8,12 @@ const CHAR_LIMIT = 140;
 
 $(document).ready(function() {
   // Function Definitions
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+  
   const createTweetElement = function(data) {
     const {user, content, created_at} = data;
 
@@ -23,7 +29,7 @@ $(document).ready(function() {
           </div>
           <p class="tweet-username">${user.handle}</p>
         </header>
-        <p>${content.text}</p>
+        <p>${escape(content.text)}</p>
         <footer>
           <p>${formatedTime}</p>
           <div>
