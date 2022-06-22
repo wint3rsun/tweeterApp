@@ -2,35 +2,58 @@
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- * 
- * 
- *  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-    "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-    "created_at": 1461116232227
- }
- * 
- * 
  */
 
+ // Dummy data based from initial-tweets.json
 const tweetData = {
   "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
+    "name": "Wint3rSun",
+    "avatars": "https://i.imgur.com/nlhLi3I.png",
+    "handle": "@Wint3r"
   },
   "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
+    "text": "Cats are a programmers best friend"
   },
   "created_at": 1461116232227
 }
 
+const tweetDataArr = [
+  {
+    "user": {
+      "name": "Wint3rSun",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@Wint3r"
+    },
+    "content": {
+      "text": "Cats are a programmers best friend <3"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+]
+
+// Function Declarations
 const createTweetElement = function (data) {
   const {user, content, created_at} = data;
 
@@ -60,12 +83,21 @@ const createTweetElement = function (data) {
   return tweetTemplateMarkup;
 };
 
-$(document).ready(function () {
-  const $tweet = createTweetElement(tweetData);
+const renderTweets = function (dataArray) {
 
+  for (tweet of dataArray) {
+    const $tweetData = createTweetElement(tweet);
+    $('.all-tweets').append($tweetData);
+  }
+}
+
+$(document).ready(function () {
+  
   //Test / driver code (temporary)
+  //const $tweet = createTweetElement(tweetData);
   //console.log($tweet);
-  $('.all-tweets').append($tweet);
+  //$('.all-tweets').append($tweet);
+  renderTweets(tweetDataArr);
 
 });
 
