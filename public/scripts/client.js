@@ -75,15 +75,14 @@ $(document).ready(function() {
     const formData = $(this).find("#tweet-text");
     
     if (!formData.val() || formData.val() === null) {
-      $("#invalid-input-empty").slideDown(() => {
-        $("#invalid-input-empty").slideUp(5000);
-      });
-      
+      $("#invalid-input-overLimit").slideUp();
+      $("#invalid-input-empty").slideDown();
     } else if(formData.val().length > CHAR_LIMIT) {
-      $("#invalid-input-overLimit").slideDown(() => {
-        $("#invalid-input-overLimit").slideUp(5000);
-      });
+      $("#invalid-input-empty").slideUp();
+      $("#invalid-input-overLimit").slideDown();
     } else {
+      $("#invalid-input-empty").slideUp();
+      $("#invalid-input-overLimit").slideUp();
       $.ajax({
         url: '/tweets/',
         data: formData.serialize(),
