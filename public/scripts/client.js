@@ -4,18 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
- // Dummy data based from initial-tweets.json
-const tweetData = {
-  "user": {
-    "name": "Wint3rSun",
-    "avatars": "https://i.imgur.com/nlhLi3I.png",
-    "handle": "@Wint3r"
-  },
-  "content": {
-    "text": "Cats are a programmers best friend"
-  },
-  "created_at": 1461116232227
-}
+// Dummy data based from initial-tweets.json
+// const tweetData = {
+//   "user": {
+//     "name": "Wint3rSun",
+//     "avatars": "https://i.imgur.com/nlhLi3I.png",
+//     "handle": "@Wint3r"
+//   },
+//   "content": {
+//     "text": "Cats are a programmers best friend"
+//   },
+//   "created_at": 1461116232227
+// };
 
 const tweetDataArr = [
   {
@@ -51,10 +51,10 @@ const tweetDataArr = [
     },
     "created_at": 1461113959088
   }
-]
+];
 
 // Function Declarations
-const createTweetElement = function (data) {
+const createTweetElement = function(data) {
   const {user, content, created_at} = data;
 
   //console.log(`user: ${user}\ncontent: ${content}\ncreated at: ${created_at}`);
@@ -78,20 +78,20 @@ const createTweetElement = function (data) {
         </div>
       </footer>
     </article>
-  `
+  `;
 
   return tweetTemplateMarkup;
 };
 
-const renderTweets = function (dataArray) {
+const renderTweets = function(dataArray) {
 
-  for (tweet of dataArray) {
+  for (const tweet of dataArray) {
     const $tweetData = createTweetElement(tweet);
     $('.all-tweets').append($tweetData);
   }
-}
+};
 
-$(document).ready(function () {
+$(document).ready(function() {
   
   //Test / driver code (temporary)
   //const $tweet = createTweetElement(tweetData);
@@ -101,13 +101,29 @@ $(document).ready(function () {
 
   const $form = $('#jquery-ajax-form-submit');
   
-  $form.on('submit', (event)=> {
+  $form.on('submit', function(event) {
     event.preventDefault();
-    console.log(`SUCCESS :D FORM SUBMITED!`)
+
+    const formData = $(this).find("#tweet-text");
+    //console.log(formData.val())
     
+    if (!formData.val()) {
+      alert("Cannot send empty tweet");
+    } else {
+      $.ajax({
+        url: '/tweets/',
+        data: formData.serialize(),
+        method: "POST",
+        success: (response) => {
+          console.log("AJAX is successfull girl :D");
+          console.log(response);
+        },
+        error: (error) => {
+          console.log('Tweeter isn\'t working right now');
+          console.log(error);
+        }
+      });
+    }
   });
-
-
-
 });
 
