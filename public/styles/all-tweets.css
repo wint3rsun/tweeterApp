@@ -11,6 +11,11 @@ article.tweet {
 
   height: 300px;
 }
+
+article.tweet:hover {
+  box-shadow: 5px 10px #CBCAC8;
+}
+
 article.tweet header {
   background-color: inherit;
   background-image: inherit;
@@ -32,6 +37,7 @@ article.tweet header p.tweet-username {
   opacity: 0.7;
   font-weight: 600;
 }
+
 article.tweet header div p {
   margin-left: 10px;
 }
@@ -47,4 +53,8 @@ article.tweet footer {
 
 article.tweet footer div {
   color: #4056A1;
+}
+
+article.tweet footer div i:hover {
+  color: #FFC063;
 }
