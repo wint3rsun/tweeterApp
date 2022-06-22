@@ -47,7 +47,7 @@ $(document).ready(function() {
   const renderTweets = function(dataArray) {
     for (const tweet of dataArray) {
       const $tweetData = createTweetElement(tweet);
-      $('.all-tweets').append($tweetData);
+      $('.tweet-container').append($tweetData);
     }
   };
   
@@ -75,15 +75,20 @@ $(document).ready(function() {
     const formData = $(this).find("#tweet-text");
     
     if (!formData.val() || formData.val() === null) {
-      alert("Invalid Tweet! Can't submit nothing~ 😩");
+      $("#invalid-input-empty").slideDown(() => {
+        $("#invalid-input-empty").slideUp(5000);
+      });
+      
     } else if(formData.val().length > CHAR_LIMIT) {
-      alert("Invalid Tweet! Remove some char's plz 🥺");
+      $("#invalid-input-overLimit").slideDown(() => {
+        $("#invalid-input-overLimit").slideUp(5000);
+      });
     } else {
       $.ajax({
         url: '/tweets/',
         data: formData.serialize(),
         method: "POST",
-        success: (response) => {
+        success: () => {
           formData.val(''); //
           loadTweets();
         },
