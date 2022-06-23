@@ -12,7 +12,7 @@ $(document).ready(function() {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
   
   const createTweetElement = function(data) {
     const {user, content, created_at} = data;
@@ -62,6 +62,7 @@ $(document).ready(function() {
       },
       error: (error) => {
         console.log('Tweeter isn\'t working right now');
+        console.log(error);
       }
     });
   };
@@ -79,7 +80,7 @@ $(document).ready(function() {
     if (!formData.val() || formData.val() === null) {
       $("#invalid-input-overLimit").slideUp();
       $("#invalid-input-empty").slideDown();
-    } else if(formData.val().length > CHAR_LIMIT) {
+    } else if (formData.val().length > CHAR_LIMIT) {
       $("#invalid-input-empty").slideUp();
       $("#invalid-input-overLimit").slideDown();
     } else {
