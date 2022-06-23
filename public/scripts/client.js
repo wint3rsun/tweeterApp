@@ -45,7 +45,9 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(dataArray) {
+    $('.tweet-container').empty();
     for (const tweet of dataArray) {
+      console.log(tweet);
       const $tweetData = createTweetElement(tweet);
       $('.tweet-container').append($tweetData);
     }
@@ -88,7 +90,7 @@ $(document).ready(function() {
         data: formData.serialize(),
         method: "POST",
         success: () => {
-          formData.val(''); //
+          formData.val('');
           loadTweets();
         },
         error: (error) => {
