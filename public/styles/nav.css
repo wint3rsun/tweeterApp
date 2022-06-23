@@ -30,10 +30,23 @@ nav p {
 nav i {
   text-align: center;
   color: red;
+
+  animation: bounce 1s linear infinite;
+  margin-top: 5px;
 }
 
 nav .right-side {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+@keyframes bounce {
+  0%,
+  50% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
