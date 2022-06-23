@@ -1,22 +1,7 @@
-.all-tweets div.invalid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.all-tweets div.invalid p.invalid-input {
-  border: 3px solid red;
-  background-color: rgb(255, 0, 0, 50%);
-  height: 75px;
-  display: none;
-}
-
-
 section .tweet-container {
   display: flex;
   flex-direction: column-reverse;
 }
-
 
 article.tweet {
   border-style: solid;
@@ -29,7 +14,7 @@ article.tweet {
 
   margin-top: 2.5em;
 
-  height: 300px;
+  height: 30vh;
 }
 
 article.tweet:hover {
@@ -63,7 +48,7 @@ article.tweet header p.tweet-username {
 }
 
 article.tweet header div p {
-  margin-left: 10px;
+  margin-left: 1em;
 }
 
 article.tweet footer {
@@ -81,4 +66,27 @@ article.tweet footer div {
 
 article.tweet footer div i:hover {
   color: #FFC063;
+}
+
+@media screen and (min-width: 1024px) {
+  .all-tweets {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 2.5vw;
+  }
+  article.tweet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .tweet header {
+    margin-left: 0;
+  }
+  .tweet p {
+    margin: 0;
+    margin-bottom: 0.25em;
+  }
+  .tweet footer {
+    margin-top: 2px;
+  }
 }

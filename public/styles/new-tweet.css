@@ -39,3 +39,22 @@ section.new-tweet {
 .new-tweet form div output.invalid {
   color: red;
 }
+
+.new-tweet div.invalid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-tweet div.invalid p.invalid-input {
+  border: 3px solid red;
+  background-color: rgb(255, 0, 0, 50%);
+  height: 1.5em;
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .new-tweet h2 {
+    margin-top: 0;
+  }
+}

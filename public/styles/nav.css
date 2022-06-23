@@ -1,5 +1,7 @@
 nav {
-  background-color: #4056A1;
+  background-color: #FFC063;
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+
   color: #FFFFFF;
   
   height: 120px;
@@ -48,5 +50,11 @@ nav .right-side {
   }
   50% {
     transform: translateY(-5px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
   }
 }
