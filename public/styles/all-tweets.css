@@ -1,15 +1,13 @@
-/* .all-tweets div.invalid {
-  
-} */
+.all-tweets div.invalid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .all-tweets div.invalid p.invalid-input {
-  border-style: solid;
-  border-color: red;
-
+  border: 3px solid red;
   background-color: rgb(255, 0, 0, 50%);
-
-  text-align: center;
-
+  height: 75px;
   display: none;
 }
 
