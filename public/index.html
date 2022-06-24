@@ -27,50 +27,53 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
-
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-      <div class="right-side">
-        <p><strong>Write</strong> a new tweet</p>
-        <i class="fa-solid fa-angles-down"></i>
-      </div>
-    </nav>
-
-    <header>
-      <div>
-        <img src="/images/profile-hex.png" alt="user display photo">
-      </div>
-      <br>
-      <div>
-        <h2>Abigail <span>Addae</span></h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form id="jquery-ajax-form-submit" enctype="application/x-www-form-urlencoded">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+    <div class="top">
+      <nav>
+        <span>tweeter</span>
+        <div class="right-side">
+          <p><strong>Write</strong> a new tweet</p>
+          <i class="fa-solid fa-angles-down"></i>
+        </div>
+      </nav>
+  
+      <header>
+        <div>
+          <img src="/images/profile-hex.png" alt="user display photo">
+        </div>
+        <br>
+        <div>
+          <h2>Abigail <span>Addae</span></h2>
+        </div>
+      </header>
+  
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form id="jquery-ajax-form-submit" enctype="application/x-www-form-urlencoded">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+          <div class="invalid">
+            <p id="invalid-input-empty" class="invalid-input">Whoops Invalid Tweet! Can't submit nothing~ 😩</p>
+            <p id="invalid-input-overLimit" class="invalid-input">Whoops Invalid Tweet! Remove some char's plz 🥺</p>
           </div>
-        </form>
-        <div class="invalid">
-          <p id="invalid-input-empty" class="invalid-input">Whoops Invalid Tweet! Can't submit nothing~ 😩</p>
-          <p id="invalid-input-overLimit" class="invalid-input">Whoops Invalid Tweet! Remove some char's plz 🥺</p>
-        </div>
-      </section>
-      <section class="all-tweets">
-        <div class="tweet-container">
-
-        </div>
-        
-      </section>
-    </main>
+        </section>
+        <section class="all-tweets">
+          <div class="tweet-container">
+  
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <p>&copy;Abigail Addae &#64; Lighthouse Labs</p>
+    </footer>
   </body>
 </html>
