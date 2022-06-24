@@ -6,6 +6,7 @@ section .tweet-container {
 article.tweet {
   border-style: solid;
   border-width: 5px;
+  border-radius: 25px;
 
   padding-left: 5%;
   padding-right: 5%;
@@ -14,7 +15,7 @@ article.tweet {
 
   margin-top: 2.5em;
 
-  height: 30vh;
+  height: 15em;
 }
 
 article.tweet:hover {
@@ -78,6 +79,7 @@ article.tweet footer div i:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 10em;
   }
   .tweet header {
     margin-left: 0;
