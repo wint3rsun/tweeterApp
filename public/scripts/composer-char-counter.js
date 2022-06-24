@@ -10,4 +10,18 @@ $(document).ready(function() {
     
     (output.val() < 0) ? output.addClass("invalid") : output.removeClass("invalid");
   });
+
+  $(window).scroll(function() {
+    $('#jquery-ajax-form-submit').hide();
+
+    if ($(window).scrollTop() > 100) {
+      $('.scroll-up').show();
+      $('.scroll-up').click(function() {
+        $(document).scrollTop(0);
+      });
+    }
+    if ($(window).scrollTop() <= 100) {
+      $('.scroll-up').hide();
+    }
+  });
 });
