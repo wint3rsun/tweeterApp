@@ -102,7 +102,7 @@ $(document).ready(function() {
     }
   });
 
-  $('.compose').on('click', (function() {
+  $('.right-side').on('click', (function() {
     $('#jquery-ajax-form-submit').toggle();
   }));
 
