@@ -69,6 +69,31 @@ article.tweet footer div i:hover {
   color: #FFC063;
 }
 
+button.scroll-up {
+  display: none; 
+
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 1;
+
+  background-color: red;
+  color: #FFFFFF;
+
+  border: none;
+  outline: none;
+  border-radius: 75% ;
+
+  cursor: pointer;
+
+  padding: 1em;
+}
+
+button.scroll-up:hover {
+  background-color: #FFC063;
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+}
+
 @media screen and (min-width: 1024px) {
   .all-tweets {
     display: flex;
@@ -90,5 +115,13 @@ article.tweet footer div i:hover {
   }
   .tweet footer {
     margin-top: 2px;
+  }
+  button.scroll-up {
+    display: none; 
+
+    bottom: 0.5em;
+    right: 0.5em;
+
+    padding: 0.5em;
   }
 }
