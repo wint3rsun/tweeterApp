@@ -1,10 +1,4 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-const CHAR_LIMIT = 140;
+const CHAR_LIMIT = 140; // sets char limit for tweeter submission
 
 $(document).ready(function() {
   // Function Definitions
@@ -77,6 +71,7 @@ $(document).ready(function() {
 
     const formData = $(this).find("#tweet-text");
     
+    //form validation logic
     if (!formData.val() || formData.val() === null) {
       $("#invalid-input-overLimit").slideUp();
       $("#invalid-input-empty").slideDown();
@@ -95,16 +90,16 @@ $(document).ready(function() {
           loadTweets();
         },
         error: (error) => {
-          alert('Tweeter isn\'t working right now');
+          alert('So sorry! Tweeter isn\'t working right now');
           console.log(error);
         }
       });
     }
   });
 
+  // toggle tweet submission form logic
   $('.right-side').on('click', (function() {
     $('#jquery-ajax-form-submit').toggle();
   }));
-
 });
 
