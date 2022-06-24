@@ -42,3 +42,8 @@ main {
     width: 100vw;
   }
 }
+
+footer {
+  text-align: center;
+  opacity:50%;
+}
