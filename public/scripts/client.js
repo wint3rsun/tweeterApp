@@ -102,5 +102,9 @@ $(document).ready(function() {
     }
   });
 
+  $('.compose').on('click', (function() {
+    $('#jquery-ajax-form-submit').toggle();
+  }));
+
 });
 

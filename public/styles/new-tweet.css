@@ -5,6 +5,8 @@ section.new-tweet {
 .new-tweet form {
   margin-left: 5%;
   margin-right: 5%;
+  margin-top: 5%;
+  display: none;
 }
 
 .new-tweet form textarea {

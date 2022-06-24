@@ -37,6 +37,18 @@ nav i {
   margin-top: 5px;
 }
 
+nav button.compose {
+  background: none;
+  border: none;
+
+  color: #FFFFFF;
+}
+
+nav button.compose:hover {
+  border: 2px dashed #4056A1;
+  border-radius: 25px;
+}
+
 nav .right-side {
   display: flex;
   flex-direction: column;
