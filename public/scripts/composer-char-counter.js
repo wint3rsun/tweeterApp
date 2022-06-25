@@ -12,7 +12,11 @@ $(document).ready(function() {
   });
   // determine appearance/disapearance of scroll up button on window scroll
   $(window).scroll(function() {
+
+    //hide forms and errors on scroll
     $('#jquery-ajax-form-submit').hide();
+    $("#invalid-input-overLimit").hide();
+    $("#invalid-input-empty").hide();
 
     if ($(window).scrollTop() > 100) {
       $('.scroll-up').show();
