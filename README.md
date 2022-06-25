@@ -8,6 +8,7 @@ This repository was built from the starter code for the project (located [here](
 
 !["screenshot of home page in desktop view"](https://github.com/wint3rsun/tweeterApp/blob/master/docs/desktop-version-home-page.png?raw=true)
 !["screenshot of page scrolled down in mobile view"](https://github.com/wint3rsun/tweeterApp/blob/master/docs/mobile-version-scrolled-down.png?raw=true)
+<sub>For a full working demo video see `mobile-version-tweeter-app-demo.mov` in docs folder</sub>
 ## Getting Started
 
 1. Install all dependencies (using the `npm install` command).
